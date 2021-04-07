@@ -1,7 +1,7 @@
 const initialState = {
    dateIsShown: false,
    val: '',
-   depInfocus: false,
+   depInFocus: false,
    arrInFocus: false,
 };
 
@@ -10,14 +10,18 @@ export default (state = initialState, action) => {
       case 'flights/SHOW_DEPART':
          return {
             ...state,
-            flights: action.payload.depDataToShow,
+            flights: action.payload.flights,
             dateIsShown: action.payload.dateIsShown,
+            depInFocus: action.payload.depInFocus,
+            arrInFocus: action.payload.arrInFocus,
          };
       case 'flights/SHOW_ARRIVE':
          return {
             ...state,
-            flights: action.payload.arrDataToShow,
+            flights: action.payload.flights,
             dateIsShown: action.payload.dateIsShown,
+            depInFocus: action.payload.depInFocus,
+            arrInFocus: action.payload.arrInFocus,
          };
       case 'flights/CHANGE_VAL':
          return {

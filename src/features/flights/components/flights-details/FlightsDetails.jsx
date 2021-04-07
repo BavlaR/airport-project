@@ -5,6 +5,6 @@ import NoFlight from '../no-flight/NoFlight';
 
 export default ({ flights }) => (
    <section className="flights-details">
-      {flights.length > 0 ? <FlightsList flights={flights} /> : <NoFlight />}
+      {flights[0] ? <FlightsList flights={flights} /> : <NoFlight />}
    </section>
 );

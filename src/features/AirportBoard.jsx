@@ -2,13 +2,21 @@ import React from 'react';
 import { connect } from 'react-redux';
 import wing from '../img/wing.jpg';
 import './airportBoard.scss';
-import { getDepartData, getArriveData, changeVal } from './search-flights/flights.actions';
 import {
-   flightsSelector,
-   dateSelector,
-   valSelector,
-   flightSelector,
-} from './search-flights/flights.selectors';
+   getDepartData,
+   getArriveData,
+   changeVal,
+   // getDepartSingle,
+} from './search-flights/flights.actions';
+// {
+//    flightsSelector,
+//    flightSelector,
+//    dateSelector,
+//    valSelector,
+//    isDepartSelector,
+//    isArriveSelector
+// }
+import * as selectors from './search-flights/flights.selectors';
 import Search from './search-flights/components/search/Search';
 import FlightsDetails from './flights/components/flights-details/FlightsDetails';
 import SearchDate from './search-flights/components/search-date/SearchDate';
@@ -19,7 +27,6 @@ const AirportBoard = p => {
 
    const { flights } = p;
    console.log(flights);
-   console.log(p.flight);
    console.log(p.val);
    return (
       <main className="airport-board-container" style={{ background: `url(${wing})` }}>
@@ -27,6 +34,8 @@ const AirportBoard = p => {
          <Search
             getDepart={p.getDepartData}
             getArrive={p.getArriveData}
+            isDepart={p.isDepart}
+            isArrive={p.isArrive}
             val={p.val}
             changeVal={p.changeVal}
          />
@@ -37,10 +46,12 @@ const AirportBoard = p => {
 };
 
 const mapState = state => ({
-   flights: flightsSelector(state),
-   flight: flightSelector(state),
-   dateIsShown: dateSelector(state),
-   val: valSelector(state),
+   flights: selectors.flightsSelector(state),
+   flight: selectors.flightSelector(state),
+   dateIsShown: selectors.dateSelector(state),
+   val: selectors.valSelector(state),
+   isDepart: selectors.isDepartSelector(state),
+   isArrive: selectors.isArriveSelector(state),
 });
 
 const mapDispatch = {

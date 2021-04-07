@@ -3,6 +3,14 @@
    margin: 40px auto 0;
    padding-right: 60px;
    width: 1200px;
+   .btn-focus {
+      background-color: #fff;
+      color: #1eb7ee;
+      &:hover {
+         color: #fff;
+         background-color: #73d2f0;
+      }
+   }
    &__btn {
       flex: 1;
       padding: 0;
@@ -15,14 +23,6 @@
       color: #fff;
       background-color: #73d2f0;
       transition: 0.3s ease-in-out;
-      &:focus {
-         background-color: #fff;
-         color: #1eb7ee;
-      }
-      &:focus:hover {
-         background-color: #fff;
-         color: #1eb7ee;
-      }
       &:hover {
          background-color: #1eb7ee;
          cursor: pointer;

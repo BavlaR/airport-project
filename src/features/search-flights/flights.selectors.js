@@ -5,6 +5,10 @@ export const flightSelector = state =>
       state.flights.find(flight => flight.airlineNum === state.val),
    ];
 
+export const isDepartSelector = state => state.depInFocus;
+
+export const isArriveSelector = state => state.arrInFocus;
+
 export const dateSelector = state => state.dateIsShown;
 
 export const valSelector = state => state.val.toUpperCase();
