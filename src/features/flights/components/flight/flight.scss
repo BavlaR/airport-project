@@ -1,0 +1,45 @@
+.single-flight {
+   height: 52px;
+   font-size: 15px;
+   color: #212529;
+   transition: 0.3s ease-in-out;
+   &:hover {
+      box-shadow: 0 5px 10px;
+   }
+   &:nth-child(odd) {
+      background-color: #0066871a;
+   }
+   td {
+      padding-left: 12px;
+   }
+   &__terminal {
+      display: flex;
+      justify-content: center;
+      padding-right: 20px;
+      padding-top: 5px;
+      font-size: 20px;
+      font-weight: 700;
+      color: #63c745;
+      .letter {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         width: 40px;
+         height: 40px;
+         border-radius: 50%;
+         border: 2px solid #63c745;
+      }
+      .letter-blue {
+         color: #212529;
+         border-color: #212529;
+      }
+   }
+   &__airline {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      span {
+         margin-left: 5px;
+      }
+   }
+}

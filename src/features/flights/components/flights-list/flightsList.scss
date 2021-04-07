@@ -1,0 +1,34 @@
+.flights-list {
+   width: 100%;
+   border-collapse: collapse;
+   &__head {
+      height: 48px;
+      font-size: 16px;
+      color: #95989a;
+      text-align: left;
+      .terminal {
+         width: 10%;
+      }
+      .time {
+         width: 10%;
+      }
+      .dest {
+         width: 15%;
+      }
+      .status {
+         width: 20%;
+      }
+      .airline {
+         width: 15%;
+      }
+      .flight {
+         width: 15%;
+      }
+      .detail {
+         width: 15%;
+      }
+      th {
+         padding-left: 12px;
+      }
+   }
+}

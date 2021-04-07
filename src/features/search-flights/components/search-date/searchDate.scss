@@ -1,0 +1,35 @@
+.search-date {
+   display: flex;
+   align-items: center;
+   margin: 0 auto;
+   padding-top: 25px;
+   height: 75px;
+   width: 1080px;
+   background-color: #fff;
+   &__icon {
+      display: flex;
+      flex-direction: column;
+      margin-left: 20px;
+      .date {
+         font-size: 12px;
+         font-weight: 700;
+         color: #1eb7ee;
+         text-align: center;
+      }
+      .icon {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         width: 35px;
+         height: 35px;
+         font-size: 30px;
+         color: #fff;
+         background-color: #1eb7ee;
+      }
+   }
+   &-today {
+      margin-left: 30px;
+      font-weight: 700;
+      color: #1eb7ee;
+   }
+}
