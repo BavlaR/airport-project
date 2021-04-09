@@ -1,8 +1,9 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
 import './flightsList.scss';
 import Flight from '../flight/Flight';
 
-export default p => (
+const FlightsList = p => (
    <table className="flights-list">
       <thead>
          <tr className="flights-list__head">
@@ -22,3 +23,9 @@ export default p => (
       </tbody>
    </table>
 );
+
+export default FlightsList;
+
+FlightsList.propTypes = {
+   flights: PropTypes.arrayOf(PropTypes.object).isRequired,
+};

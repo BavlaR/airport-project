@@ -1,7 +1,8 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
 import './searchSingle.scss';
 
-export default p => (
+const SearchSingle = p => (
    <section className="search-form-container">
       <form className="search-form">
          <span className="search-form__icon">
@@ -27,3 +28,11 @@ export default p => (
       </form>
    </section>
 );
+
+export default SearchSingle;
+
+SearchSingle.propTypes = {
+   getDepart: PropTypes.func.isRequired,
+   val: PropTypes.string.isRequired,
+   changeVal: PropTypes.func.isRequired,
+};

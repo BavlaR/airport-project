@@ -1,33 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { PropTypes } from 'prop-types';
 import wing from '../img/wing.jpg';
 import './airportBoard.scss';
-import {
-   getDepartData,
-   getArriveData,
-   changeVal,
-   // getDepartSingle,
-} from './search-flights/flights.actions';
-// {
-//    flightsSelector,
-//    flightSelector,
-//    dateSelector,
-//    valSelector,
-//    isDepartSelector,
-//    isArriveSelector
-// }
+import { getDepartData, getArriveData, changeVal } from './search-flights/flights.actions';
 import * as selectors from './search-flights/flights.selectors';
 import Search from './search-flights/components/search/Search';
 import FlightsDetails from './flights/components/flights-details/FlightsDetails';
-import SearchDate from './search-flights/components/search-date/SearchDate';
-// import getFlights from './gateway/flightsGateway';
 
 const AirportBoard = p => {
-   // getFlights().then(data => console.log(data));
-
    const { flights } = p;
-   console.log(flights);
-   console.log(p.val);
    return (
       <main className="airport-board-container" style={{ background: `url(${wing})` }}>
          <h1 className="title">SEARCH FLIGHT</h1>
@@ -39,8 +21,7 @@ const AirportBoard = p => {
             val={p.val}
             changeVal={p.changeVal}
          />
-         {p.dateIsShown && <SearchDate />}
-         {flights && <FlightsDetails flights={p.val ? p.flight : flights} />}
+         {flights && <FlightsDetails flights={p.val ? p.flight : flights} date={p.dateIsShown} />}
       </main>
    );
 };
@@ -61,3 +42,21 @@ const mapDispatch = {
 };
 
 export default connect(mapState, mapDispatch)(AirportBoard);
+
+AirportBoard.propTypes = {
+   flights: PropTypes.oneOfType([
+      PropTypes.bool.isRequired,
+      PropTypes.arrayOf(PropTypes.object).isRequired,
+   ]),
+   flight: PropTypes.oneOfType([
+      PropTypes.bool.isRequired,
+      PropTypes.arrayOf(PropTypes.object).isRequired,
+   ]),
+   dateIsShown: PropTypes.bool.isRequired,
+   val: PropTypes.string.isRequired,
+   isDepart: PropTypes.bool.isRequired,
+   isArrive: PropTypes.bool.isRequired,
+   getDepartData: PropTypes.func.isRequired,
+   getArriveData: PropTypes.func.isRequired,
+   changeVal: PropTypes.func.isRequired,
+};
