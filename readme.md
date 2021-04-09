@@ -1,6 +1,6 @@
 Calendar SPA sample project
 
-Netlify: https://app.netlify.com/sites/infallible-brattain-433018/overview
+Netlify: https://brave-kirch-4a095f.netlify.app/
 
 Quick start: clone the project
 
