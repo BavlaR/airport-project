@@ -1,4 +1,4 @@
-Calendar SPA sample project
+Airport board SPA sample project
 
 Netlify: https://brave-kirch-4a095f.netlify.app/
 
